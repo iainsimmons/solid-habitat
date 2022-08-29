@@ -1,0 +1,32 @@
+{
+  "name": "solid-habitat",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/solid-habitat.umd.cjs",
+  "module": "./dist/solid-habitat.js",
+  "exports": {
+    ".": {
+      "import": "./dist/solid-habitat.js",
+      "require": "./dist/solid-habitat.umd.cjs"
+    }
+  },
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.4",
+    "vite": "^3.0.0",
+    "vite-plugin-solid": "^2.3.0"
+  },
+  "dependencies": {
+    "solid-js": "^1.4.7"
+  }
+}
