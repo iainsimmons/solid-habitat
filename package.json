@@ -1,5 +1,5 @@
 {
-  "name": "@solid-habitat/root",
+  "name": "solid-habitat",
   "version": "0.1.0",
   "description": "Solid Habitat monorepo",
   "type": "module",
@@ -13,5 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "pnpm": "^7.10.0"
+  },
+  "publishConfig": {
+    "directory": "packages/core/dist"
   }
 }
