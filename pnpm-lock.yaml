@@ -7,6 +7,7 @@ importers:
       pnpm: ^7.10.0
     devDependencies:
       pnpm: 7.10.0
+    publishDirectory: packages/core
 
   packages/core:
     specifiers:
@@ -23,13 +24,13 @@ importers:
 
   packages/examples:
     specifiers:
-      '@solid-habitat/core': workspace:*
+      solid-habitat: workspace:*
       solid-js: ^1.5.4
       typescript: ^4.8.2
       vite: ^3.0.9
       vite-plugin-solid: ^2.3.0
     dependencies:
-      '@solid-habitat/core': link:../core
+      solid-habitat: link:../core
       solid-js: 1.5.4
     devDependencies:
       typescript: 4.8.2

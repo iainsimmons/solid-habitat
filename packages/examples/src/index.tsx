@@ -1,5 +1,5 @@
 /* @refresh reload */
-import SolidHabitat from '@solid-habitat/core';
+import SolidHabitat from 'solid-habitat';
 import './index.css';
 
 const components = import.meta.glob('./components/**/*.[jt]sx', {

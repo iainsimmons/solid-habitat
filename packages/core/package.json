@@ -1,7 +1,7 @@
 {
-  "name": "@solid-habitat/core",
+  "name": "solid-habitat",
   "version": "0.1.0",
-  "description": "Solid Habitat core",
+  "description": "Solid Habitat",
   "type": "module",
   "files": [
     "dist"

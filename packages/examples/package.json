@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "solid-js": "^1.5.4",
-    "@solid-habitat/core": "workspace:*"
+    "solid-habitat": "workspace:*"
   }
 }
