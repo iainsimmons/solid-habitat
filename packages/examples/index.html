@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Solid Habitat</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <div class="wrapper">
+    <h1>Solid Habitat</h1>
+
+    <h2>Call to Action</h2>
+    <pre
+      class="code"><code>&lt;div data-component=&quot;call-to-action&quot; class=&quot;preview&quot;&gt;&lt;/div&gt;&#10;&lt;!-- path: src/components/call-to-action/call-to-action.tsx --&gt;</code></pre>
+    <div data-component="call-to-action" class="preview"></div>
+    <!-- path: src/components/call-to-action/call-to-action.tsx -->
+
+    <h2>Email Subscribe with store</h2>
+    <pre
+      class="code"><code>&lt;div data-component=&quot;email-subscribe&quot; class=&quot;preview&quot;&gt;&#10;  &lt;!-- path: src/components/email-subscribe/index.tsx --&gt;&#10;  &lt;script type=&quot;text/props&quot;&gt;&#10;    {&#10;      &quot;showName&quot;: false,&#10;      &quot;showEmail&quot;: true&#10;    }&#10;  &lt;/script&gt;&#10;&lt;/div&gt;&#10;</code></pre>
+    <div data-component="email-subscribe" class="preview">
+      <!-- path: src/components/email-subscribe/index.tsx -->
+      <script type="text/props">
+        {
+          "showName": false,
+          "showEmail": true
+        }
+      </script>
+    </div>
+
+    <h2>Pokemon</h2>
+    <pre
+      class="code"><code>&lt;div data-component=&quot;Pokemon&quot; class=&quot;preview&quot; data-pokemon-id=&quot;1&quot;&gt;&lt;/div&gt;&#10;&lt;!-- path: src/components/pokemon/Pokemon.tsx --&gt;</code></pre>
+    <div data-component="Pokemon" class="preview" data-pokemon-id="1"></div>
+    <!-- path: src/components/pokemon/Pokemon.tsx -->
+    <pre
+      class="code"><code>&lt;div data-component=&quot;Pokemon&quot; class=&quot;preview&quot;&gt;&#10;  &lt;!-- path: src/components/pokemon/Pokemon.tsx --&gt;&#10;  &lt;script type=&quot;text/props&quot;&gt;&#10;    { &quot;pokemonId&quot;: &quot;4&quot; }&#10;  &lt;/script&gt;&#10;&lt;/div&gt;</code></pre>
+    <div data-component="Pokemon" class="preview">
+      <!-- path: src/components/pokemon/Pokemon.tsx -->
+      <script type="text/props">
+          { "pokemonId": "4" }
+        </script>
+    </div>
+    <pre
+      class="code"><code>&lt;div data-component=&quot;Pokemon&quot; class=&quot;preview&quot;&gt;&#10;  &lt;!-- path: src/components/pokemon/Pokemon.tsx --&gt;&#10;  &lt;script type=&quot;text/props&quot;&gt;&#10;    { &quot;pokemonId&quot;: &quot;7&quot; }&#10;  &lt;/script&gt;&#10;&lt;/div&gt;</code></pre>
+    <div data-component="Pokemon" class="preview">
+      <!-- path: src/components/pokemon/Pokemon.tsx -->
+      <script type="text/props">
+          { "pokemonId": "7" }
+        </script>
+    </div>
+  </div>
+  <script src="/src/index.tsx" type="module"></script>
+</body>
+
+</html>

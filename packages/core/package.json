@@ -1,7 +1,7 @@
 {
-  "name": "solid-habitat",
+  "name": "@solid-habitat/core",
   "version": "0.1.0",
-  "description": "",
+  "description": "Solid Habitat core",
   "type": "module",
   "files": [
     "dist"
@@ -22,11 +22,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^4.7.4",
-    "vite": "^3.0.0",
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
-    "solid-js": "^1.4.7"
+    "solid-js": "^1.5.4",
+    "@solid-habitat/utils": "workspace:*"
   }
 }

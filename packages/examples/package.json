@@ -1,7 +1,7 @@
 {
-  "name": "counter",
+  "name": "@solid-habitat/examples",
   "version": "0.1.0",
-  "description": "",
+  "description": "Solid Habitat Examples",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -10,12 +10,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^4.7.4",
-    "vite": "^3.0.0",
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
-    "solid-habitat": "workspace:../../packages/solid-habitat",
-    "solid-js": "^1.4.7"
+    "solid-js": "^1.5.4",
+    "@solid-habitat/core": "workspace:*"
   }
 }

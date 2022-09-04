@@ -1,17 +1,17 @@
 {
-  "name": "@solid-habitat/monorepo",
+  "name": "@solid-habitat/root",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Solid Habitat monorepo",
+  "type": "module",
   "scripts": {
-    "build:lib": "pnpm --filter solid-habitat build",
+    "build:lib": "pnpm --filter @solid-habitat/core build",
     "build": "pnpm -r --stream build",
-    "example:counter": "pnpm -C examples/counter run dev"
+    "dev": "pnpm --filter @solid-habitat/examples run dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "pnpm": "^7.9.5"
+    "pnpm": "^7.10.0"
   }
 }
