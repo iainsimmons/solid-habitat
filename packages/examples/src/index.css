@@ -10,6 +10,12 @@ body {
   gap: 24px;
 }
 
+.wrapper > h1,
+.wrapper > h2,
+.wrapper > p {
+  margin: 0;
+}
+
 .code,
 .preview {
   border: 1px dashed rgba(0, 0, 0, 0.2);
