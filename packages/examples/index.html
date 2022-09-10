@@ -13,22 +13,33 @@
   <div class="wrapper">
     <h1>Solid Habitat</h1>
 
-    <h2>Counter</h2>
+    <h2>Specific components</h2>
+    <p>i.e. not using <code>import.meta.glob</code></p>
     <pre
-      class="code"><code>&lt;div data-component=&quot;Counter&quot; class=&quot;preview&quot; data-prop-n-initial-count=&quot;1&quot;&gt;&lt;/div&gt;&#10;&lt;!-- path: src/components/Counter.tsx --&gt;</code></pre>
-    <div data-component="Counter" class="preview" data-prop-n-initial-count="8"></div>
+      class="code"><code>&lt;div data-habitat=&quot;App&quot; class=&quot;preview&quot;&gt;&lt;/div&gt;&#10;&lt;!-- path: src/App.tsx --&gt;</code></pre>
+    <div data-habitat="App" class="preview"></div>
+    <!-- path: src/App.tsx -->
+
+    <h2>Counter</h2>
+    <p>Use <code>data-n-prop</code> for number props</p>
+    <pre
+      class="code"><code>&lt;div data-habitat=&quot;Counter&quot; class=&quot;preview&quot; data-n-prop-initial-count=&quot;8&quot;&gt;&lt;/div&gt;&#10;&lt;!-- path: src/components/Counter.tsx --&gt;</code></pre>
+    <div data-habitat="Counter" class="preview" data-n-prop-initial-count="8"></div>
     <!-- path: src/components/Counter.tsx -->
 
     <h2>Call to Action</h2>
+    <p>Use regular Solid.js features and components</p>
     <pre
-      class="code"><code>&lt;div data-component=&quot;call-to-action&quot; class=&quot;preview&quot;&gt;&lt;/div&gt;&#10;&lt;!-- path: src/components/call-to-action/call-to-action.tsx --&gt;</code></pre>
-    <div data-component="call-to-action" class="preview"></div>
+      class="code"><code>&lt;div data-habitat=&quot;call-to-action&quot; class=&quot;preview&quot;&gt;&lt;/div&gt;&#10;&lt;!-- path: src/components/call-to-action/call-to-action.tsx --&gt;</code></pre>
+    <div data-habitat="call-to-action" class="preview"></div>
     <!-- path: src/components/call-to-action/call-to-action.tsx -->
 
     <h2>Email Subscribe with store</h2>
+    <p>Use a child <code>&lt;script type=&quot;text/props&quot;&gt;</code> tag with valid JSON for passing props to
+      components</p>
     <pre
-      class="code"><code>&lt;div data-component=&quot;email-subscribe&quot; class=&quot;preview&quot;&gt;&#10;  &lt;!-- path: src/components/email-subscribe/index.tsx --&gt;&#10;  &lt;script type=&quot;text/props&quot;&gt;&#10;    {&#10;      &quot;showName&quot;: false,&#10;      &quot;showEmail&quot;: true&#10;    }&#10;  &lt;/script&gt;&#10;&lt;/div&gt;&#10;</code></pre>
-    <div data-component="email-subscribe" class="preview">
+      class="code"><code>&lt;div data-habitat=&quot;email-subscribe&quot; class=&quot;preview&quot;&gt;&#10;  &lt;!-- path: src/components/email-subscribe/index.tsx --&gt;&#10;  &lt;script type=&quot;text/props&quot;&gt;&#10;    {&#10;      &quot;showName&quot;: false,&#10;      &quot;showEmail&quot;: true&#10;    }&#10;  &lt;/script&gt;&#10;&lt;/div&gt;&#10;</code></pre>
+    <div data-habitat="email-subscribe" class="preview">
       <!-- path: src/components/email-subscribe/index.tsx -->
       <script type="text/props">
         {
@@ -37,42 +48,43 @@
         }
       </script>
     </div>
+    <p>Use <code>data-b-prop</code> for boolean props</p>
     <pre
-      class="code"><code>&lt;div data-component=&quot;email-subscribe&quot; class=&quot;preview&quot; data-prop-b-show-name=&quot;true&quot; data-prop-b-show-email=&quot;false&quot;&gt;&lt;/div&gt;&#10;&lt;!-- path: src/components/email-subscribe/index.tsx --&gt;</code></pre>
-    <div data-component="email-subscribe" class="preview" data-prop-b-show-name="true" data-prop-b-show-email="false">
+      class="code"><code>&lt;div data-habitat=&quot;email-subscribe&quot; class=&quot;preview&quot; data-b-prop-show-name=&quot;true&quot; data-b-prop-show-email=&quot;false&quot;&gt;&lt;/div&gt;&#10;&lt;!-- path: src/components/email-subscribe/index.tsx --&gt;</code></pre>
+    <div data-habitat="email-subscribe" class="preview" data-b-prop-show-name="true" data-b-prop-show-email="false">
     </div>
     <!-- path: src/components/email-subscribe/index.tsx -->
 
     <h2>Pokemon</h2>
+    <p>Use resources too!</p>
     <pre
-      class="code"><code>&lt;div data-component=&quot;Pokemon&quot; class=&quot;preview&quot; data-prop-pokemon-id=&quot;1&quot;&gt;&lt;/div&gt;&#10;&lt;!-- path: src/components/pokemon/Pokemon.tsx --&gt;</code></pre>
-    <div data-component="Pokemon" class="preview" data-prop-pokemon-id="1"></div>
+      class="code"><code>&lt;div data-habitat=&quot;Pokemon&quot; class=&quot;preview&quot; data-prop-pokemon-id=&quot;1&quot;&gt;&lt;/div&gt;&#10;&lt;!-- path: src/components/pokemon/Pokemon.tsx --&gt;</code></pre>
+    <div data-habitat="Pokemon" class="preview" data-prop-pokemon-id="1"></div>
     <!-- path: src/components/pokemon/Pokemon.tsx -->
     <pre
-      class="code"><code>&lt;div data-component=&quot;Pokemon&quot; class=&quot;preview&quot;&gt;&#10;  &lt;!-- path: src/components/pokemon/Pokemon.tsx --&gt;&#10;  &lt;script type=&quot;text/props&quot;&gt;&#10;    { &quot;pokemonId&quot;: &quot;4&quot; }&#10;  &lt;/script&gt;&#10;&lt;/div&gt;</code></pre>
-    <div data-component="Pokemon" class="preview">
+      class="code"><code>&lt;div data-habitat=&quot;Pokemon&quot; class=&quot;preview&quot;&gt;&#10;  &lt;!-- path: src/components/pokemon/Pokemon.tsx --&gt;&#10;  &lt;script type=&quot;text/props&quot;&gt;&#10;    { &quot;pokemonId&quot;: &quot;4&quot; }&#10;  &lt;/script&gt;&#10;&lt;/div&gt;</code></pre>
+    <div data-habitat="Pokemon" class="preview">
       <!-- path: src/components/pokemon/Pokemon.tsx -->
       <script type="text/props">
           { "pokemonId": "4" }
         </script>
     </div>
     <pre
-      class="code"><code>&lt;div data-component=&quot;Pokemon&quot; class=&quot;preview&quot;&gt;&#10;  &lt;!-- path: src/components/pokemon/Pokemon.tsx --&gt;&#10;  &lt;script type=&quot;text/props&quot;&gt;&#10;    { &quot;pokemonId&quot;: &quot;7&quot; }&#10;  &lt;/script&gt;&#10;&lt;/div&gt;</code></pre>
-    <div data-component="Pokemon" class="preview">
+      class="code"><code>&lt;div data-habitat=&quot;Pokemon&quot; class=&quot;preview&quot;&gt;&#10;  &lt;!-- path: src/components/pokemon/Pokemon.tsx --&gt;&#10;  &lt;script type=&quot;text/props&quot;&gt;&#10;    { &quot;pokemonId&quot;: &quot;7&quot; }&#10;  &lt;/script&gt;&#10;&lt;/div&gt;</code></pre>
+    <div data-habitat="Pokemon" class="preview">
       <!-- path: src/components/pokemon/Pokemon.tsx -->
       <script type="text/props">
           { "pokemonId": "7" }
         </script>
     </div>
 
-    <h2>Specific components</h2>
-    <div>i.e. not using <code>import.meta.glob</code></div>
+    <h2>Non-existent component handling</h2>
     <pre
-      class="code"><code>&lt;div data-component=&quot;App&quot; class=&quot;preview&quot;&lt;/div&gt;&#10;&lt;!-- path: src/App.tsx --&gt;</code></pre>
-    <div data-component="App" class="preview"></div>
-    <!-- path: src/App.tsx -->
+      class="code"><code>&lt;div data-habitat=&quot;DoesNotExist&quot; class=&quot;preview&quot;&gt;&lt;/div&gt;</code></pre>
+    <div data-habitat="DoesNotExist" class="preview"></div>
   </div>
   <script src="/src/index.tsx" type="module"></script>
+
 </body>
 
 </html>
