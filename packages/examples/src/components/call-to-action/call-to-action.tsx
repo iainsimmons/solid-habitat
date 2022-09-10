@@ -1,12 +1,13 @@
 import { createSignal } from 'solid-js';
 import { Portal } from 'solid-js/web';
 import './call-to-action.css';
+import { counts } from '../../App';
 
 interface Props {
   backgroundColor?: string;
 }
 
-const CallToAction = (props: Props) => {
+export const CallToAction = (props: Props) => {
   const [isOpen, setIsOpen] = createSignal(false);
 
   return (
@@ -25,6 +26,7 @@ const CallToAction = (props: Props) => {
             classList={{ cta__modal: true, 'cta__modal--visible': isOpen() }}
           >
             <p>Portals work here too!</p>
+            <p>Counts (see App above): {counts.join(', ')}</p>
             <button class="cta_button" onClick={() => setIsOpen(false)}>
               close
             </button>
@@ -45,5 +47,3 @@ const CallToAction = (props: Props) => {
     </div>
   );
 };
-
-export default CallToAction;
