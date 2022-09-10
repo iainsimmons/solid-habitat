@@ -10,7 +10,7 @@
  * @return {String} kebab-case string
  */
 export default function toKebabCase(str) {
-  return str.replace(/\B([A-Z])/g, (all, seperator, letter) => {
+  return str.replace(/\B([A-Z])/g, (all, letter) => {
     return `-${letter.toLowerCase()}`;
   });
 }
