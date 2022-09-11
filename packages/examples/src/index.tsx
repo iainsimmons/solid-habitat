@@ -1,12 +1,7 @@
 /* @refresh reload */
 import SolidHabitat from 'solid-habitat';
-import App from './App';
 import './index.css';
 
-const components = import.meta.glob('./components/**/*.[jt]sx', {
-  eager: true,
-});
+const componentMap = import.meta.glob('./components/**/*.[jt]sx');
 
-const componentEntries = Object.entries(components);
-
-SolidHabitat([...componentEntries, ['./App.tsx', App]]);
+SolidHabitat({ ...componentMap, './App.tsx': () => import('./App.tsx') });

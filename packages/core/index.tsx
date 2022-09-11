@@ -1,11 +1,19 @@
 /* @refresh reload */
 import type { Component } from 'solid-js';
+import { lazy } from 'solid-js';
 import { Dynamic, render } from 'solid-js/web';
-import toCamelCase from './utils/toCamelCase';
-import toKebabCase from './utils/toKebabCase';
-import toPascalCase from './utils/toPascalCase';
+import {
+  matchComponentPath,
+  toCamelCase,
+  toKebabCase,
+  toPascalCase,
+} from './utils';
 
-export default function SolidHabitat(componentEntries) {
+interface IComponentMap {
+  [index: string]: Promise<Component>;
+}
+
+export default function SolidHabitat(componentMap: IComponentMap) {
   const roots = document.querySelectorAll('[data-habitat]');
 
   roots.forEach((root) => {
@@ -28,25 +36,16 @@ export default function SolidHabitat(componentEntries) {
       {}
     );
     const propsScript = root.querySelector('script[type="text/props"]');
-    const foundComponent = componentEntries.find(
-      ([path]) =>
-        path.includes(`/${component}.`) ||
-        path.includes(`/${component}/index.`) ||
-        path.includes(`/${component}/${toPascalCase(component)}.`) ||
-        path.includes(`/${toKebabCase(component)}/${toKebabCase(component)}.`)
+    const matchingModule = Object.entries(componentMap).find(([path]) =>
+      matchComponentPath(path, component)
     )?.[1];
 
-    if (!foundComponent) {
+    if (!matchingModule) {
       root.setAttribute('data-habited', 'false');
       return;
     }
 
-    const Component =
-      typeof foundComponent === 'function'
-        ? foundComponent
-        : foundComponent[toPascalCase(component)] ||
-          foundComponent?.default ||
-          null;
+    const ComponentToRender = lazy(matchingModule);
 
     let scriptProps;
     try {
@@ -58,7 +57,13 @@ export default function SolidHabitat(componentEntries) {
 
     if (!habited) {
       render(
-        () => <Dynamic component={Component} {...dataProps} {...scriptProps} />,
+        () => (
+          <Dynamic
+            component={ComponentToRender}
+            {...dataProps}
+            {...scriptProps}
+          />
+        ),
         root
       );
       root.setAttribute('data-habited', 'true');
