@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "build:lib": "pnpm --filter solid-habitat build",
+    "build:examples": "pnpm --filter @solid-habitat/examples build",
     "build": "pnpm -r --stream build",
-    "dev": "pnpm --filter @solid-habitat/examples run dev"
+    "dev": "pnpm --filter @solid-habitat/examples run dev",
+    "serve:examples": "pnpm --filter @solid-habitat/examples run serve"
   },
   "keywords": [],
   "author": "",
