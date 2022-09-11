@@ -47,3 +47,5 @@ export const CallToAction = (props: Props) => {
     </div>
   );
 };
+
+export default CallToAction;
