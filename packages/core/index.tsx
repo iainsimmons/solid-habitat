@@ -3,6 +3,7 @@ import type { Component } from 'solid-js';
 import { lazy } from 'solid-js';
 import { Dynamic, render } from 'solid-js/web';
 import {
+  cleanHtml,
   matchComponentPath,
   toCamelCase,
   toKebabCase,
@@ -36,6 +37,10 @@ export default function SolidHabitat(componentMap: IComponentMap) {
       {}
     );
     const propsScript = root.querySelector('script[type="text/props"]');
+    const innerHTML = root.innerHTML;
+    if (propsScript || innerHTML) {
+      root.innerHTML = '';
+    }
     const matchingModule = Object.entries(componentMap).find(([path]) =>
       matchComponentPath(path, component)
     )?.[1];
@@ -62,6 +67,7 @@ export default function SolidHabitat(componentMap: IComponentMap) {
             component={ComponentToRender}
             {...dataProps}
             {...scriptProps}
+            contents={cleanHtml(innerHTML, true)}
           />
         ),
         root

@@ -78,6 +78,19 @@
         </script>
     </div>
 
+    <h2>HTML content</h2>
+    <p>Original markup:</p>
+    <pre
+      class="code"><code>&lt;div data-habitat=&quot;WithHtmlContent&quot; class=&quot;preview&quot;&gt;&#10;  &lt;!-- path: src/components/WithHtmlContent.tsx --&gt;&#10;  &lt;script&gt;console.log('only runs once')&lt;/script&gt;&#10;  &lt;p&gt;Component receives the &lt;code&gt;content&lt;/code&gt; prop&lt;/p&gt;&#10;&lt;/div&gt;</code></pre>
+    <p>Use in component (please remember to sanitise the HTML!):</p>
+    <pre
+      class="code"><code>&lt;For each={props.contents}&gt;&#10;  {(node) =&gt; (&#10;    &lt;Dynamic component={node.localName} innerHTML={cleanHtml(node.innerHTML)} class=&quot;styled&quot; /&gt;&#10;  )}&#10;&lt;/For&gt;</code></pre>
+    <div data-habitat="WithHtmlContent" class="preview">
+      <!-- path: src/components/WithHtmlContent.tsx -->
+      <script>console.log('only runs once')</script>
+      <p>Component receives the <code>content</code> prop</p>
+    </div>
+
     <h2>Non-existent component handling</h2>
     <pre
       class="code"><code>&lt;div data-habitat=&quot;DoesNotExist&quot; class=&quot;preview&quot;&gt;&lt;/div&gt;</code></pre>

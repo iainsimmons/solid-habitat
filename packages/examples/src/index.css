@@ -40,3 +40,9 @@ body {
   font-size: 11px;
   color: rgba(0, 0, 0, 0.5);
 }
+
+.styled {
+  background-color: rgb(68, 107, 158);
+  color: #fff;
+  padding: 8px;
+}
