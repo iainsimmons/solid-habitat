@@ -1,6 +1,6 @@
 {
   "name": "@solid-habitat/examples",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Solid Habitat Examples",
   "scripts": {
     "start": "vite",

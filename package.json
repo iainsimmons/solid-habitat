@@ -1,6 +1,6 @@
 {
   "name": "@solid-habitat/root",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Solid Habitat monorepo",
   "type": "module",
   "scripts": {

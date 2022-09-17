@@ -1,7 +1,7 @@
-/* @refresh reload */
 import type { Component } from 'solid-js';
 import { lazy } from 'solid-js';
 import { Dynamic, render } from 'solid-js/web';
+import type { HabitatComponentMap } from './index';
 import {
   cleanHtml,
   matchComponentPath,
@@ -10,11 +10,11 @@ import {
   toPascalCase,
 } from './utils';
 
-interface IComponentMap {
-  [index: string]: Promise<Component>;
-}
-
-export default function SolidHabitat(componentMap: IComponentMap) {
+/**
+ * A library for loading Solid.js components and props from HTML.
+ * @param componentMap {HabitatComponentMap} An object with component paths as keys, and values which are promises that return a module with a Solid.js Component as the default export.
+ */
+export function SolidHabitat(componentMap: HabitatComponentMap) {
   const roots = document.querySelectorAll('[data-habitat]');
 
   roots.forEach((root) => {
