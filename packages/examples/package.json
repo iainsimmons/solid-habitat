@@ -1,6 +1,6 @@
 {
   "name": "@solid-habitat/examples",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Solid Habitat Examples",
   "scripts": {
     "start": "vite",
@@ -15,7 +15,8 @@
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
-    "solid-js": "^1.5.4",
-    "solid-habitat": "workspace:*"
+    "dompurify": "^2.4.0",
+    "solid-habitat": "workspace:*",
+    "solid-js": "^1.5.4"
   }
 }

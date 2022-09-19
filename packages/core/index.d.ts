@@ -3,20 +3,19 @@ declare module 'solid-habitat' {
 
   /**
    * Extend props to allow an optional `contents` prop
-   * containing a list of Nodes from the original DOM element.
+   * containing a HTMLCollection of the original DOM element's children.
    */
   export declare type HabitatComponentProps<P = {}> = P & {
-    contents?: Node[];
+    contents: HTMLCollection;
   };
 
   /**
    * `HabitatComponent` allows an optional `contents` prop
-   * containing a list of Nodes from the original DOM element.
+   * containing a HTMLCollection of the original DOM element's children.
    *
    * Note: There's no way to pass JSX children to a Habitat Component.
-   * Use `contents` instead (for basic HTML children),
-   * along with Solid's <Dynamic /> component, OR
-   * render the Nodes' outerHTML with the `innerHTML` attribute
+   * For rendering the `contents`, use Solid's <Dynamic /> component
+   * (OR innerHTML, at your own risk!)
    */
   export declare type HabitatComponent = VoidComponent<
     HabitatComponentProps<P>

@@ -1,6 +1,6 @@
 {
   "name": "solid-habitat",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Solid Habitat",
   "type": "module",
   "files": [
@@ -28,6 +28,7 @@
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
+    "dompurify": "^2.4.0",
     "solid-js": "^1.5.4"
   }
 }

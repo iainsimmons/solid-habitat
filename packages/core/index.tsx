@@ -1,6 +1,7 @@
 import type { Component } from 'solid-js';
 import { lazy } from 'solid-js';
 import { Dynamic, render } from 'solid-js/web';
+import DOMPurify from 'dompurify';
 import type { HabitatComponentMap } from './index';
 import {
   cleanHtml,
@@ -38,9 +39,14 @@ export function SolidHabitat(componentMap: HabitatComponentMap) {
     );
     const propsScript = root.querySelector('script[type="text/props"]');
     const innerHTML = root.innerHTML;
+    let contents;
     if (propsScript || innerHTML) {
+      contents = DOMPurify.sanitize(innerHTML, {
+        RETURN_DOM_FRAGMENT: true,
+      })?.children;
       root.innerHTML = '';
     }
+
     const matchingModule = Object.entries(componentMap).find(([path]) =>
       matchComponentPath(path, component)
     )?.[1];
@@ -67,7 +73,7 @@ export function SolidHabitat(componentMap: HabitatComponentMap) {
             component={ComponentToRender}
             {...dataProps}
             {...scriptProps}
-            contents={cleanHtml(innerHTML, true)}
+            contents={contents}
           />
         ),
         root

@@ -11,11 +11,13 @@ importers:
 
   packages/core:
     specifiers:
+      dompurify: ^2.4.0
       solid-js: ^1.5.4
       typescript: ^4.8.2
       vite: ^3.0.9
       vite-plugin-solid: ^2.3.0
     dependencies:
+      dompurify: 2.4.0
       solid-js: 1.5.4
     devDependencies:
       typescript: 4.8.2
@@ -24,12 +26,14 @@ importers:
 
   packages/examples:
     specifiers:
+      dompurify: ^2.4.0
       solid-habitat: workspace:*
       solid-js: ^1.5.4
       typescript: ^4.8.2
       vite: ^3.0.9
       vite-plugin-solid: ^2.3.0
     dependencies:
+      dompurify: 2.4.0
       solid-habitat: link:../core
       solid-js: 1.5.4
     devDependencies:
@@ -481,6 +485,10 @@ packages:
     dependencies:
       ms: 2.1.2
     dev: true
+
+  /dompurify/2.4.0:
+    resolution: {integrity: sha512-Be9tbQMZds4a3C6xTmz68NlMfeONA//4dOavl/1rNw50E+/QO0KVpbcU0PcaW0nsQxurXls9ZocqFxk8R2mWEA==}
+    dev: false
 
   /electron-to-chromium/1.4.241:
     resolution: {integrity: sha512-e7Wsh4ilaioBZ5bMm6+F4V5c11dh56/5Jwz7Hl5Tu1J7cnB+Pqx5qIF2iC7HPpfyQMqGSvvLP5bBAIDd2gAtGw==}
